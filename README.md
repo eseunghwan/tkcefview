@@ -1,7 +1,8 @@
 
 <hr>
 <p align="center">
-<img src="https://github.com/eseunghwan/tkcefview/blob/master/tkcefview/assets/tkcefview.png?raw=true" width=30 /><font size="7">&nbsp;tkcefview</font>
+<img src="https://github.com/eseunghwan/tkcefview/blob/master/tkcefview/assets/tkcefview.png?raw=true" width=60 /><br>
+<font size="7">tkcefview</font>
 </p>
 <hr>
 <p align="center"><font size="5">pywebview inspired tkinter framed cefpython3</font></p>
