@@ -11,7 +11,7 @@
 ## Installation
 ```powershell
 <# from master branch(git) #>
-pip3 install https://github.com/eseunghwan/tkcefview.git
+pip3 install git+https://github.com/eseunghwan/tkcefview.git
 <# from pypi #>
 pip3 install tkcefview
 ```
@@ -25,7 +25,9 @@ tc.initialize()
 tc.create_window("http://www.google.com")
 tc.start()
 ```
-<br>
+<img src="https://github.com/eseunghwan/tkcefview/blob/master/tests/base_test.png?raw=true" width=400 >
+
+<br><br>
 
 ## Debug Mode
 ```python
@@ -35,7 +37,9 @@ tc.initialize()
 tc.create_window("[{my_html_file}](http://www.google.com)")
 tc.start(debug = True)
 ```
-<br>
+<img src="https://github.com/eseunghwan/tkcefview/blob/master/tests/debug_test.png?raw=true" width=400 >
+
+<br><br>
 
 ## Javascript API
 ```python
@@ -48,3 +52,4 @@ tc.initialize()
 tc.create_window("{my_html_file}", js_api = MyAPI)
 tc.start()
 ```
+<img src="https://github.com/eseunghwan/tkcefview/blob/master/tests/jsapi_test.png?raw=true" width=400 >
