@@ -15,7 +15,9 @@ pip3 install git+https://github.com/eseunghwan/tkcefview.git
 <# from pypi #>
 pip3 install tkcefview
 ```
-<br>
+<img src="https://github.com/eseunghwan/tkcefview/blob/master/tests/install.png?raw=true" width=400 >
+
+<br><br>
 
 ## Basic Usage
 ```python
