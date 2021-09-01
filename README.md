@@ -15,7 +15,7 @@ pip3 install git+https://github.com/eseunghwan/tkcefview.git
 <# from pypi #>
 pip3 install tkcefview
 ```
-<img src="https://github.com/eseunghwan/tkcefview/blob/master/tests/installation.png?raw=true" width=400 >
+<img src="https://github.com/eseunghwan/tkcefview/blob/master/tests/installation.png?raw=true" width=600 >
 
 <br><br>
 
@@ -27,7 +27,7 @@ tc.initialize()
 tc.create_window("http://www.google.com")
 tc.start()
 ```
-<img src="https://github.com/eseunghwan/tkcefview/blob/master/tests/base_test.png?raw=true" width=400 >
+<img src="https://github.com/eseunghwan/tkcefview/blob/master/tests/base_test.png?raw=true" width=500 >
 
 <br><br>
 
@@ -55,4 +55,4 @@ tc.initialize()
 tc.create_window("{my_html_file}", js_api = MyAPI)
 tc.start()
 ```
-<img src="https://github.com/eseunghwan/tkcefview/blob/master/tests/jsapi_test.png?raw=true" width=400 >
+<img src="https://github.com/eseunghwan/tkcefview/blob/master/tests/jsapi_test.png?raw=true" width=500 >
