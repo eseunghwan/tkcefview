@@ -1,7 +1,7 @@
 
 <hr>
 <p align="center">
-<img src="https://github.com/eseunghwan/tkcefview/blob/master/tkcefview/assets/tkcefview.png?raw=true" width=60 /><br>
+<img src="https://github.com/eseunghwan/tkcefview/blob/master/tkcefview/assets/tkcefview.png?raw=true" width=150 /><br>
 <font size="7">tkcefview</font>
 </p>
 <hr>
