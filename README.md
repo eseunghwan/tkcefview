@@ -39,7 +39,8 @@ tc.initialize()
 tc.create_window("[{my_html_file}](http://www.google.com)")
 tc.start(debug = True)
 ```
-<img src="https://github.com/eseunghwan/tkcefview/blob/master/tests/debug_test.png?raw=true" width=400 >
+<img src="https://github.com/eseunghwan/tkcefview/blob/master/tests/base_test.png?raw=true" width=150 >
+<img src="https://github.com/eseunghwan/tkcefview/blob/master/tests/debug_test.png?raw=true" width=200 >
 
 <br><br>
 

@@ -23,4 +23,4 @@ class MyAPI(tc.BrowserAPI):
         self.execute_function("update_count", self.count)
 
 tc.create_window("index.html", title = "jsapi_test", js_api = MyAPI)
-tc.start(debug = True)
+tc.start()
