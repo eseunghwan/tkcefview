@@ -49,6 +49,19 @@ import tkcefview as tc
 
 class MyAPI(tc.BrowserAPI):
     # properties, methods, and so on
+    count = 0
+
+    def count_up(self):
+        self.count += 1
+        self.update_count()
+
+    def count_down(self):
+        if self.count > 0:
+            self.count -= 1
+            self.update_count()
+
+    def update_count(self):
+        self.execute_function("update_count", self.count)
 
 tc.initialize()
 tc.create_window("{my_html_file}", js_api = MyAPI)
