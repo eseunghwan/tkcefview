@@ -22,7 +22,10 @@ def initialize(settings:dict = {}):
     more details in "https://github.com/cztomczak/cefpython/blob/master/api/ApplicationSettings.md"
     """
     global __app
-    __app = Application(settings)
+    if __app is None:
+        __app = Application(settings)
+    else:
+        print("webview environment already initialized")
 
 def create_window(url:str, js_api:BrowserAPI = None, title:str = "tkcefview", icon:str = None, width:int = 600, height:int = 400, x:int = 0, y:int = 0) -> BrowserWindow:
     """

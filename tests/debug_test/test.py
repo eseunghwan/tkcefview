@@ -6,5 +6,5 @@ sys.path.append(__import_dir)
 import tkcefview as tc
 
 tc.initialize()
-tc.create_window("http://www.google.com", title = "base_test")
-tc.start()
+tc.create_window("http://www.google.com", title = "debug_test")
+tc.start(debug = True)

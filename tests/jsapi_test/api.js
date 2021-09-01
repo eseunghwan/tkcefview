@@ -4,9 +4,9 @@ function update_count(count) {
 }
 
 function count_up() {
-    API.count_up();
+    MyAPI.count_up();
 }
 
 function count_down() {
-    API.count_down();
+    MyAPI.count_down();
 }

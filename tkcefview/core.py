@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
 import os, sys, typing, threading
-if sys.version_info.major == 3:
-    import tkinter as tk
-else:
-    import Tkinter as tk
-
+import tkinter as tk
 from cefpython3 import cefpython as cef
-from .assets import base_icon_file, vue_js_file
+from .assets import base_icon_file, base_js_file
 
 
 class BrowserAPI:

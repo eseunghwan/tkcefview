@@ -26,7 +26,7 @@ setup(
     ],
     name = __name__,
     keywords = [ "webview", "cef", "tkinter" ],
-    description = "webview like tkinter framed cefpython3",
+    description = "pywebview inspired tkinter framed cefpython3",
     long_description = readme,
     long_description_content_type = "text/markdown",
     license = "MIT license",
