@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 from setuptools import _install_setup_requires, setup
-from tkcefview import __name__, __author__, __email__, __version__
+
+__author__ = "eseunghwan"
+__email__ = "shlee0920@naver.com"
+__version__ = "2021.11.29"
 
 with open("requirements.txt", "r", encoding = "utf-8") as reqr:
     requires = reqr.read().split("\n")
@@ -24,7 +27,7 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3"
     ],
-    name = __name__,
+    name = "tkcefview",
     keywords = [ "webview", "cef", "tkinter" ],
     description = "pywebview inspired tkinter framed cefpython3",
     long_description = readme,

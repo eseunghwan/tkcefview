@@ -74,7 +74,19 @@ class BrowserWindow(tk.Toplevel):
 
         self.title(title)
         self.iconphoto(False, tk.PhotoImage(file = self.icon))
-        self.geometry(f"{int(width)}x{int(height)}+{int(x)}+{int(y)}")
+
+        width, height = int(width), int(height)
+        if x == -1:
+            x = int((self.winfo_screenwidth - width) / 2)
+        else:
+            x = int(x)
+
+        if y == -1:
+            y = int((self.winfo_screenheight - height) / 2)
+        else:
+            y = int(y)
+
+        self.geometry(f"{width}x{height}+{x}+{y}")
 
         self.bind("<Configure>", self.__on_tk_configure)
         self.protocol("WM_DELETE_WINDOW", self.__on_tk_close)

@@ -1,13 +1,5 @@
 # -*- coding: utf-8 -*-
-
-__author__ = "eseunghwan"
-__email__ = "shlee0920@naver.com"
-__version__ = "2021.09.01"
-
-try:
-    from .core import Application, BrowserWindow, BrowserAPI
-except (ImportError, ModuleNotFoundError):
-    Application, BrowserWindow, BrowserAPI = None, None, None
+from .core import Application, BrowserWindow, BrowserAPI
 
 __app = None
 
@@ -31,7 +23,7 @@ def initialize(settings:dict = {}):
     else:
         print("webview environment already initialized")
 
-def create_window(url:str, js_api:BrowserAPI = None, title:str = "tkcefview", icon:str = None, width:int = 600, height:int = 400, x:int = 0, y:int = 0) -> BrowserWindow:
+def create_window(url:str, js_api:BrowserAPI = None, title:str = "tkcefview", icon:str = None, width:int = 600, height:int = 400, x:int = -1, y:int = -1) -> BrowserWindow:
     """
     create webview window
 
@@ -41,8 +33,8 @@ def create_window(url:str, js_api:BrowserAPI = None, title:str = "tkcefview", ic
     :param icon: webview window title. default is 'assets/icon.png'
     :param width: width of window. default is 600
     :param height: height of window. default is 400
-    :param x: x position of window. default is 0
-    :param y: y position of window. default is 0
+    :param x: x position of window. default is -1
+    :param y: y position of window. default is -1
     :return: BrowserWindow object
     """
     if not __app:
