@@ -7,7 +7,7 @@ __version__ = "2021.09.01"
 try:
     from .core import Application, BrowserWindow, BrowserAPI
 except (ImportError, ModuleNotFoundError):
-    pass
+    Application, BrowserWindow, BrowserAPI = None, None, None
 
 __app = None
 
