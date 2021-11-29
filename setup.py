@@ -3,7 +3,7 @@ from setuptools import _install_setup_requires, setup
 from tkcefview import __name__, __author__, __email__, __version__
 
 with open("requirements.txt", "r", encoding = "utf-8") as reqr:
-    requires = reqr.readlines()
+    requires = reqr.read().split("\n")
 
 with open("README.md", encoding = "utf-8") as rfr:
     readme = rfr.read()
@@ -32,7 +32,7 @@ setup(
     license = "MIT license",
     # package data informations
     include_package_data = False,
-    install_setup_requires = requires,
+    install_requires = requires,
     setup_requires = requires,
     packages = [ "tkcefview", "tkcefview/assets" ],
     package_data = {
