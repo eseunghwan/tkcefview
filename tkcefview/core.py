@@ -107,10 +107,10 @@ class BrowserWindow(tk.Toplevel):
             self.__bindings.Rebind()
 
     def on_load(self, browser):
-        print("onload")
+        pass
 
     def on_close(self, browser):
-        print("onclose")
+        pass
 
     def __on_tk_configure(self, _):
         if not self.__is_cef_init:
