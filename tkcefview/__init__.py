@@ -4,7 +4,11 @@ __author__ = "eseunghwan"
 __email__ = "shlee0920@naver.com"
 __version__ = "2021.09.01"
 
-from .core import Application, BrowserWindow, BrowserAPI
+try:
+    from .core import Application, BrowserWindow, BrowserAPI
+except (ImportError, ModuleNotFoundError):
+    pass
+
 __app = None
 
 
