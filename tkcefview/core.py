@@ -77,12 +77,12 @@ class BrowserWindow(tk.Toplevel):
 
         width, height = int(width), int(height)
         if x == -1:
-            x = int((self.winfo_screenwidth - width) / 2)
+            x = int((self.winfo_screenwidth() - width) / 2)
         else:
             x = int(x)
 
         if y == -1:
-            y = int((self.winfo_screenheight - height) / 2)
+            y = int((self.winfo_screenheight() - height) / 2)
         else:
             y = int(y)
 
