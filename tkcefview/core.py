@@ -92,7 +92,7 @@ class BrowserWindow(tk.Toplevel):
         self.protocol("WM_DELETE_WINDOW", self.__on_tk_close)
         # self.focus_set()
 
-        Application.windows.append(self)
+        Application.windows.insert(0, self)
 
     def show_devtools(self):
         """
