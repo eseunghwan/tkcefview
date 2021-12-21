@@ -116,10 +116,10 @@ class BrowserWindow(tk.Toplevel):
         """
         if js_api_cls is not None:
             js_api = js_api_cls(self, self.__browser)
-            self.register_object(js_api)
+            self.register_object(js_api.__class__.__name__, js_api)
 
-    def register_object(self, object):
-        self.__bindings.SetObject(object.__class__.__name__, object)
+    def register_object(self, name, object):
+        self.__bindings.SetObject(name, object)
         self.__bindings.Rebind()
 
     def on_load(self, browser):
