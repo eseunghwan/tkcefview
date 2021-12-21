@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from typing import Union, List
 from .core import Application, BrowserWindow, BrowserAPI
 
 __app = None
@@ -23,12 +24,12 @@ def initialize(settings:dict = {}):
     else:
         print("webview environment already initialized")
 
-def create_window(url:str, js_api:BrowserAPI = None, title:str = "tkcefview", icon:str = None, width:int = 600, height:int = 400, x:int = -1, y:int = -1) -> BrowserWindow:
+def create_window(url:str, js_api:Union[BrowserAPI, List[BrowserAPI]] = None, title:str = "tkcefview", icon:str = None, width:int = 600, height:int = 400, x:int = -1, y:int = -1) -> BrowserWindow:
     """
     create webview window
 
     :param url: url to show in webview. file, http url available
-    :param js_api: javascript api for webview. inherits from 'BrowserAPI'
+    :param js_api: javascript api for webview(single or multiple). inherits from 'BrowserAPI'
     :param title: webview window title
     :param icon: webview window title. default is 'assets/icon.png'
     :param width: width of window. default is 600

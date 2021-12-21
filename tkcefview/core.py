@@ -59,7 +59,7 @@ class BrowserWindow(tk.Toplevel):
             if not is_loading:
                 self.browser_window.on_load(browser)
 
-    def __init__(self, url:str, js_api_cls:BrowserAPI, title:str, icon:str, width:int, height:int, x:int, y:int):
+    def __init__(self, url:str, js_api_cls:typing.Union[BrowserAPI, typing.List[BrowserAPI]], title:str, icon:str, width:int, height:int, x:int, y:int):
         super().__init__()
 
         self.__is_cef_init = False
@@ -135,7 +135,12 @@ class BrowserWindow(tk.Toplevel):
 
             self.__bindings = bindings = cef.JavascriptBindings(bindToFrames = False, bindToPopups = False)
             browser.SetJavascriptBindings(bindings)
-            self.register_js_api(self.__js_api_cls)
+
+            if isinstance(self.__js_api_cls, typing.List[BrowserAPI]):
+                for api_cls in self.__js_api_cls:
+                    self.register_js_api(api_cls)
+            else:
+                self.register_js_api(self.__js_api_cls)
 
             browser.SetClientHandler(BrowserWindow.BrowserWindowHandler(self))
 
