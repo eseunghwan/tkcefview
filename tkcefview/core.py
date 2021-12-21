@@ -136,7 +136,7 @@ class BrowserWindow(tk.Toplevel):
             self.__bindings = bindings = cef.JavascriptBindings(bindToFrames = False, bindToPopups = False)
             browser.SetJavascriptBindings(bindings)
 
-            if isinstance(self.__js_api_cls, typing.List[BrowserAPI]):
+            if isinstance(self.__js_api_cls, list):
                 for api_cls in self.__js_api_cls:
                     self.register_js_api(api_cls)
             else:
