@@ -12,8 +12,9 @@ class BrowserAPI:
     func execute_javascript: execute javascript code in webview
     func execute_function: execute defined javascript function in webview
     """
-    def __init__(self, browser):
-        self.__browser:BrowserWindow = browser
+    def __init__(self, browser_window, browser):
+        self.window:BrowserWindow = BrowserWindow
+        self.__browser = browser
 
     def execute_javascript(self, js_script):
         """
