@@ -135,7 +135,7 @@ class BrowserWindow(tk.Toplevel):
             self.__is_cef_init = True
 
             winfo = cef.WindowInfo()
-            winfo.SetAsChild(self.__get_handle(), [0, 0, self.winfo_width(), self.winfo_height()])
+            winfo.SetAsChild(self.__get_handle(), [0, 0, self.wb_width, self.wb_height])
             self.__browser = browser = cef.CreateBrowserSync(winfo, url = self.url)
             assert browser
 
