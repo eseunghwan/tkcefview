@@ -180,8 +180,11 @@ class BrowserWindow(tk.Toplevel):
             return self.winfo_id()
 
     def __cef_loop(self):
-        cef.MessageLoopWork()
-        self.after(5, self.__cef_loop)
+        try:
+            cef.MessageLoopWork()
+            self.after(5, self.__cef_loop)
+        except:
+            pass
 
 class Application(tk.Tk):
     """
