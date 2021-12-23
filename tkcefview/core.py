@@ -88,7 +88,6 @@ class BrowserWindow(tk.Toplevel):
             y = int(y)
 
         self.wb_width, self.wb_height, self.wb_x, self.wb_y = width, height, x, y
-        # self.geometry(f"{width}x{height}+{x}+{y}")
 
         self.bind("<Configure>", self.__on_tk_configure)
         self.protocol("WM_DELETE_WINDOW", self.__on_tk_close)
