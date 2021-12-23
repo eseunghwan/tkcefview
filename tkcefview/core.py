@@ -87,12 +87,11 @@ class BrowserWindow(tk.Toplevel):
         else:
             y = int(y)
 
-        self.geometry(f"{width}x{height}+{x}+{y}")
+        self.wb_width, self.wb_height, self.wb_x, self.wb_y = width, height, x, y
+        # self.geometry(f"{width}x{height}+{x}+{y}")
 
         self.bind("<Configure>", self.__on_tk_configure)
         self.protocol("WM_DELETE_WINDOW", self.__on_tk_close)
-        self.bind("<FocusOut>", self._on_focus_out)
-        # self.focus_set()
 
         Application.windows.insert(0, self)
 
@@ -129,10 +128,9 @@ class BrowserWindow(tk.Toplevel):
     def on_close(self, browser):
         pass
 
-    def _on_focus_out(self, _):
-        self.master.focus_force()
-
     def __on_tk_configure(self, _):
+        self.geometry(f"{self.wb_width}x{self.wb_height}+{self.wb_x}+{self.wb_y}")
+
         if not self.__is_cef_init:
             self.__is_cef_init = True
 
