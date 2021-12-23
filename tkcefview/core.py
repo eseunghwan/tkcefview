@@ -91,6 +91,7 @@ class BrowserWindow(tk.Toplevel):
 
         self.bind("<Configure>", self.__on_tk_configure)
         self.protocol("WM_DELETE_WINDOW", self.__on_tk_close)
+        self.bind("<FocusOut>", self._on_focus_out)
         # self.focus_set()
 
         Application.windows.insert(0, self)
@@ -127,6 +128,9 @@ class BrowserWindow(tk.Toplevel):
 
     def on_close(self, browser):
         pass
+
+    def _on_focus_out(self, _):
+        self.master.focus_force()
 
     def __on_tk_configure(self, _):
         if not self.__is_cef_init:
