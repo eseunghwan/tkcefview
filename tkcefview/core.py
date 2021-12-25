@@ -87,8 +87,7 @@ class BrowserWindow(tk.Toplevel):
         else:
             y = int(y)
 
-        if sys.platform == "win32":
-            self.wb_width, self.wb_height, self.wb_x, self.wb_y = width, height, x, y
+        self.wb_width, self.wb_height, self.wb_x, self.wb_y = width, height, x, y
 
         self.bind("<Configure>", self.__on_tk_configure)
         self.protocol("WM_DELETE_WINDOW", self.__on_tk_close)
@@ -129,12 +128,13 @@ class BrowserWindow(tk.Toplevel):
         pass
 
     def __on_tk_configure(self, _):
+        self.geometry(f"{self.wb_width}x{self.wb_height}+{self.wb_x}+{self.wb_y}")
+
         if not self.__is_cef_init:
             self.__is_cef_init = True
 
             winfo = cef.WindowInfo()
             if sys.platform == "win32":
-                self.geometry(f"{self.wb_width}x{self.wb_height}+{self.wb_x}+{self.wb_y}")
                 geometry = [ 0, 0, self.wb_width, self.wb_height ]
             else:
                 geometry = [ 0, 0, self.winfo_width(), self.winfo_height() ]
