@@ -58,6 +58,9 @@ class BrowserWindow(tk.Toplevel):
 
         def OnLoadingStateChange(self, browser, is_loading, **_):
             if not is_loading:
+                if sys.platform == "win32":
+                    self.browser_window.geometry(f"{self.browser_window.wb_width}x{self.browser_window.wb_height}+{self.browser_window.wb_x}+{self.browser_window.wb_y}")
+
                 self.browser_window.on_load(browser)
 
     def __init__(self, url:str, js_api_cls:typing.Union[BrowserAPI, typing.List[BrowserAPI]], title:str, icon:str, width:int, height:int, x:int, y:int):
@@ -88,6 +91,8 @@ class BrowserWindow(tk.Toplevel):
             y = int(y)
 
         self.wb_width, self.wb_height, self.wb_x, self.wb_y = width, height, x, y
+        if not sys.platform == "win32":
+            self.geometry(f"{width}x{height}+{x}+{y}")
 
         self.bind("<Configure>", self.__on_tk_configure)
         self.protocol("WM_DELETE_WINDOW", self.__on_tk_close)
@@ -128,8 +133,6 @@ class BrowserWindow(tk.Toplevel):
         pass
 
     def __on_tk_configure(self, _):
-        self.geometry(f"{self.wb_width}x{self.wb_height}+{self.wb_x}+{self.wb_y}")
-
         if not self.__is_cef_init:
             self.__is_cef_init = True
 

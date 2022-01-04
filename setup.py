@@ -3,7 +3,7 @@ from setuptools import _install_setup_requires, setup
 
 __author__ = "eseunghwan"
 __email__ = "shlee0920@naver.com"
-__version__ = "2021.12.25"
+__version__ = "2022.01.04"
 
 with open("requirements.txt", "r", encoding = "utf-8") as reqr:
     requires = reqr.read().split("\n")
