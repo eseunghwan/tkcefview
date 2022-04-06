@@ -157,6 +157,9 @@ class BrowserWindow(tk.Toplevel):
 
             browser.SetClientHandler(BrowserWindow.BrowserWindowHandler(self))
 
+            if sys.platform == "win32":
+                self.geometry(f"{self.wb_width}x{self.wb_height}+{self.wb_x}+{self.wb_y}")
+
             if self.debug:
                 self.show_devtools()
 
