@@ -22,7 +22,7 @@ setup(
     version = __version__,
     url = "https://github.com/eseunghwan/tkcefview",
     # pip specfied informations
-    python_requires = "<3.8",
+    python_requires = ">=3.6",
     classifiers = [
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3"
